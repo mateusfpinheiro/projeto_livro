@@ -1,0 +1,12 @@
+Options -MultiViews
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /curso_01/public
+
+RewriteCond %{ENV:REDIRECT_STATUS] ˆ$
+RewriteCond %{REQUEST_FILENAME] !-d
+RewriteCond %{REQUEST_FILENAME] !-f
+RewriteCond %{REQUEST_FILENAME] !-l
+
+RewriteRule ˆ(.+)$ index.php?url=$1 [QSA,L]
